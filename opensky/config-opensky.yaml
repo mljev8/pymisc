@@ -1,0 +1,49 @@
+input-glob-pattern: '*_opensky_states.h5'
+input-dir: '/path/to/some/dir/'
+output-dir: '/path/to/another/dir/'
+
+opensky-states-dtype:
+    names:
+        - time
+        - icao24
+        - lat
+        - lon
+        - velocity
+        - heading
+        - vertrate
+        - callsign
+        - onground
+        - alert
+        - spi
+        - squawk
+        - baroaltitude
+        - geoaltitude
+        - lastposupdate
+        - lastcontact
+    formats:
+        - float64 # time
+        - S6      # icao24
+        - float32 # lat
+        - float32 # lon
+        - float32 # velocity
+        - float32 # heading
+        - float32 # vertrate
+        - S8      # callsign
+        - bool    # onground
+        - bool    # alert
+        - bool    # spi
+        - S4      # squawk 
+        - float32 # baro
+        - float32 # geo
+        - float64 # lastposupdate
+        - float64 # lastcontact
+
+omit-fields-list:
+    - callsign
+    - onground
+    - alert
+    - spi
+    - squawk
+    - geoaltitude
+    - lastposupdate
+    - lastcontact
